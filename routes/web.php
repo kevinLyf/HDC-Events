@@ -20,3 +20,13 @@ Route::get('/', function () {
 Route::get('/contact', function() {
     return view('contact');
 }); 
+
+Route::get('/products', function() {
+    $search = request("search");
+
+    return view('products', ["search" => $search]);
+});
+
+Route::get('/products/{id}', function($id) {
+    return view('product', ["id" => $id]);
+});
