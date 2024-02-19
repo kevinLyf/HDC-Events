@@ -10,11 +10,17 @@
         </form>
     </div>
     <div class="my-5">
+        @if($search)
+        <h1 class="text-3xl">Searching for "{{ $search }}"</h1>
+        @else
         <h1 class="text-3xl">Next events</h1>
+        @endif
         <p class="dark:text-gray-400">See the events of the next few days</p>
     </div>
         <div class="flex flex-wrap align-middle gap-3">
-        @if(count($events) === 0)
+        @if(count($events) === 0 && $search)
+        <p>Unable to find any event with: <b>"{{ $search }}"</b> <a href="/" class="text-blue-500">See all</a></p>
+        @elseif(count($events) === 0)
             <p>There are no events <b>scheduled</b></p>
         @endif
         @foreach($events as $event)
