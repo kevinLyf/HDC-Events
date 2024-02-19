@@ -7,7 +7,7 @@
     <form action="/events" method="POST" enctype="multipart/form-data" class="flex flex-col gap-5 mt-5">
         @csrf
         <div>
-            <label for="image" name="image" class="block mb-2 text-xl font-medium text-gray-900">Image</label>
+            <label for="image" class="block mb-2 text-xl font-medium text-gray-900">Image</label>
             <input type="file" id="image" name="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
         <div>
@@ -25,9 +25,39 @@
                 <option value="1">Private</option>
             </select>
         </div>
+        
         <div>
-            <label for="city" name="city" class="block mb-2 text-xl font-medium text-gray-900">City</label>
+            <label for="city" class="block mb-2 text-xl font-medium text-gray-900">City</label>
             <input type="text" id="city" name="city" placeholder="City" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+
+        <div>
+            <label for="date" name="date" class="block mb-2 text-xl font-medium text-gray-900">Date</label>
+            <input type="date" id="date" name="date" placeholder="Select event date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        
+
+        <div class="flex align-middle items-center mb-4 gap-3">
+            <label for="items" class="block mb-2 text-xl font-medium text-gray-900">Add items</label>
+            <div class="flex align-middle justify-center">
+                <input id="chairs" name="items[]" type="checkbox" value="Chairs" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="chairs" class="ms-2 text-sm font-medium text-gray-500">Chairs</label>
+            </div>
+
+            <div class="flex align-middle justify-center">
+                <input id="openFood" name="items[]" type="checkbox" value="Open Food" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="openFood" class="ms-2 text-sm font-medium text-gray-500">Open food</label>
+            </div>
+
+            <div class="flex align-middle justify-center">
+                <input id="openBar" name="items[]" type="checkbox" value="Open Bar" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="openBar" class="ms-2 text-sm font-medium text-gray-500">Open bar</label>
+            </div>
+
+            <div class="flex align-middle justify-center">
+                <input id="gifts" name="items[]" type="checkbox" value="Gifts" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="gifts" class="ms-2 text-sm font-medium text-gray-500">Gifts</label>
+            </div>
         </div>
 
         <div>
